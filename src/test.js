@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import ReactQuestify from './'
 
-describe('ExampleComponent', () => {
+describe('ReactQuestify', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(ReactQuestify).toBeTruthy()
   })
 })
