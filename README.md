@@ -55,7 +55,7 @@ class MyComponent extends Component {
 ```js
 {
     name: 'character',
-    text: 'What's your favorite character?',
+    text: 'What\'s your favorite character?',
     options: ['Mickey Mouse', 'Donald Duck', 'Bugs Bunny', 'Duffy Duck'], //the available options
     type: 'text', //input text type
     answers: {
@@ -106,7 +106,7 @@ class MyComponent extends Component {
 ```js
 {
     name: 'facebook',
-    text: "What's you facebook page url",
+    text: "Please, write your facebook page url",
     suggestion: 'https://facebook.com/example',
     type: 'url',
     answers: {

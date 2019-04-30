@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import ReactQuestify from 'react-questify'
+import ReactQuestify from "react-questify";
 
 const App = () => {
   const questions = [
     {
-      name: 'name',
-      text: 'Qual è il nome del tuo business?',
-      suggestion: 'Piadineria "Da ciccio"',
-      type: 'text',
+      name: "name",
+      text: "Who are you?",
+      suggestion: "I am your worst nightmare",
+      type: "text",
       answers: {
         default: {
           goTo: 1
@@ -16,12 +16,12 @@ const App = () => {
       }
     },
     {
-      name: 'business',
-      text: 'Che tipo di business è?',
-      type: 'select',
-      options: ['Freelancer', 'Parrucchiere', 'Ristorante', 'Negozio', 'Altro'],
+      name: "character",
+      text: "What's your favorite character?",
+      type: "select",
+      options: ["Mickey Mouse", "Donald Duck", "Bugs Bunny", "Duffy Duck"],
       answers: {
-        Freelancer: {
+        "Mickey Mouse": {
           goTo: 3
         },
         default: {
@@ -30,10 +30,10 @@ const App = () => {
       }
     },
     {
-      name: 'employee',
-      text: 'Quante persone lavorano nel tuo business?',
-      type: 'options',
-      options: ['1', '< 5', '< 10', '> 10'],
+      name: "experience",
+      text: "How many years of experience do you have?",
+      type: "options",
+      options: ["1", "< 5", "< 10", "> 10"],
       answers: {
         default: {
           goTo: 3
@@ -41,10 +41,10 @@ const App = () => {
       }
     },
     {
-      name: 'color',
-      text: 'Qual è il tuo colore preferito?',
-      type: 'color',
-      options: ['red', 'black', 'green', 'purple'],
+      name: "color",
+      text: "What is your favorite color?",
+      type: "color",
+      options: ["red", "#f90", "black", "#800"],
       answers: {
         default: {
           goTo: 4
@@ -52,10 +52,10 @@ const App = () => {
       }
     },
     {
-      name: 'facebook',
-      text: "Hai una pagina Facebook? Se si, inserisci l'url",
-      suggestion: 'https://facebook.com/example',
-      type: 'url',
+      name: "facebook",
+      text: "Please, write your facebook page url",
+      suggestion: "https://facebook.com/example",
+      type: "url",
       answers: {
         default: {
           goTo: 5
@@ -63,9 +63,9 @@ const App = () => {
       }
     },
     {
-      name: 'photos',
-      text: 'Ci siamo quasi... Potresti caricare qualche foto del tuo business?',
-      type: 'images',
+      name: "photos",
+      text: "We are almost there... Please, update your photos",
+      type: "images",
       answers: {
         default: {
           goTo: 6
@@ -75,10 +75,17 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <div
+      style={{
+        margin: "0 auto",
+        maxWidth: "800px",
+        width: "100%",
+        marginTop: "200px"
+      }}
+    >
       <ReactQuestify questions={questions} />
     </div>
-  )
-}
+  );
+};
 
 export default App;
