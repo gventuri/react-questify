@@ -45,6 +45,7 @@ const App = () => {
       text: "What is your favorite color?",
       type: "color",
       options: ["red", "#f90", "black", "#800"],
+      skippable: true,
       answers: {
         default: {
           goTo: 4

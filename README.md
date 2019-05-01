@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/react-questify.svg)](https://www.npmjs.com/package/react-questify) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+You can see a working demo of the library [here](https://gventuri.github.io/react-questify/).
+
 ## Install
 
 ```bash
@@ -118,6 +120,27 @@ class MyComponent extends Component {
 ```
 
 ### Image input (coming soon)
+
+## Skippable questions
+
+There are some questions the user might not be able to answer. For those, you can add a "skip" button.
+In order to do so, you need to add the `skippable: true` attribute, as you can see in the example.
+It will show the question provided in the `answers.default.goTo` attribute.
+
+```js
+{
+    name: 'name',
+    text: "Please, enter your name",
+    suggestion: 'Goose',
+    type: 'text',
+    skippable: true
+    answers: {
+        default: {
+            goTo: 5
+        }
+    }
+}
+```
 
 ## License
 

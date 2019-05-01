@@ -20,7 +20,14 @@ const Questify = ({ questions }) => {
 
     submitForm();
   };
+  const onSkip = () => {
+    skipQuestion();
+  };
 
+  const skipQuestion = () => {
+    nextStep();
+    clearInput();
+  };
   const submitForm = (answer = "") => {
     addAnswer(answer);
     nextStep();
@@ -47,72 +54,80 @@ const Questify = ({ questions }) => {
   };
 
   return (
-    <form className={styles.question} onSubmit={onFormSubmit}>
-      {(questions[currentStep].type === "text" ||
-        questions[currentStep].type === "url") && (
-        <div>
-          <input
-            id="question"
-            type={questions[currentStep].type}
-            placeholder={`(Es. ${questions[currentStep].suggestion})`}
-            value={currentAnswer}
-            onChange={onInputChange}
-            autoFocus
-            required
-          />
-          <label htmlFor="question">{questions[currentStep].text}</label>
-        </div>
-      )}
-
-      {questions[currentStep].type === "select" && (
-        <div>
-          <select id="question" onChange={onSelectChange} autoFocus required>
-            <option value="" />
-            {questions[currentStep].options.map(question => (
-              <option>{question}</option>
-            ))}
-          </select>
-          <label htmlFor="question">{questions[currentStep].text}</label>
-        </div>
-      )}
-
-      {questions[currentStep].type === "options" && (
-        <div>
-          <label htmlFor="question">{questions[currentStep].text}</label>
-          <div id="questions" className={styles.mt2}>
-            {questions[currentStep].options.map(question => (
-              <a
-                href="#"
-                onClick={() => onOptionChoose(question)}
-                className={styles.button}
-              >
-                {question}
-              </a>
-            ))}
+    <div>
+      <form className={styles.question} onSubmit={onFormSubmit}>
+        {(questions[currentStep].type === "text" ||
+          questions[currentStep].type === "url") && (
+          <div>
+            <input
+              id="question"
+              type={questions[currentStep].type}
+              placeholder={`(Es. ${questions[currentStep].suggestion})`}
+              value={currentAnswer}
+              onChange={onInputChange}
+              autoFocus
+              required
+            />
+            <label htmlFor="question">{questions[currentStep].text}</label>
           </div>
-        </div>
-      )}
+        )}
 
-      {questions[currentStep].type === "color" && (
-        <div>
-          <label htmlFor="question">{questions[currentStep].text}</label>
-          <div id="questions" className={styles.mt2}>
-            {questions[currentStep].options.map(question => (
-              <a
-                href="#"
-                style={{ backgroundColor: question }}
-                onClick={() => onOptionChoose(question)}
-                className={`${styles.button} ${styles.button__color}`}
-              />
-            ))}
+        {questions[currentStep].type === "select" && (
+          <div>
+            <select id="question" onChange={onSelectChange} autoFocus required>
+              <option value="" />
+              {questions[currentStep].options.map(question => (
+                <option>{question}</option>
+              ))}
+            </select>
+            <label htmlFor="question">{questions[currentStep].text}</label>
           </div>
-        </div>
-      )}
+        )}
 
-      {questions[currentStep].type === "images" && (
-        <p>Images are not supported so far!</p>
+        {questions[currentStep].type === "options" && (
+          <div>
+            <label htmlFor="question">{questions[currentStep].text}</label>
+            <div id="questions" className={styles.mt2}>
+              {questions[currentStep].options.map(question => (
+                <a
+                  href="#"
+                  onClick={() => onOptionChoose(question)}
+                  className={styles.button}
+                >
+                  {question}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {questions[currentStep].type === "color" && (
+          <div>
+            <label htmlFor="question">{questions[currentStep].text}</label>
+            <div id="questions" className={styles.mt2}>
+              {questions[currentStep].options.map(question => (
+                <a
+                  href="#"
+                  style={{ backgroundColor: question }}
+                  onClick={() => onOptionChoose(question)}
+                  className={`${styles.button} ${styles.button__color}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {questions[currentStep].type === "images" && (
+          <p>Images are not supported so far!</p>
+        )}
+      </form>
+
+      {questions[currentStep].skippable && (
+        <a className={styles.skip} onClick={onSkip}>
+          skip
+        </a>
       )}
-    </form>
+    </div>
   );
 };
 
