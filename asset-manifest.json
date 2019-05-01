@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-questify/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/react-questify/static/js/main.d171f1e7.chunk.js",
-    "main.js.map": "/react-questify/static/js/main.d171f1e7.chunk.js.map",
+    "main.js": "/react-questify/static/js/main.88f43acc.chunk.js",
+    "main.js.map": "/react-questify/static/js/main.88f43acc.chunk.js.map",
     "runtime~main.js": "/react-questify/static/js/runtime~main.36e20834.js",
     "runtime~main.js.map": "/react-questify/static/js/runtime~main.36e20834.js.map",
     "static/js/2.cc16dd21.chunk.js": "/react-questify/static/js/2.cc16dd21.chunk.js",
     "static/js/2.cc16dd21.chunk.js.map": "/react-questify/static/js/2.cc16dd21.chunk.js.map",
     "index.html": "/react-questify/index.html",
-    "precache-manifest.ba64bbd98320088d248c5fe45cc22aec.js": "/react-questify/precache-manifest.ba64bbd98320088d248c5fe45cc22aec.js",
+    "precache-manifest.8269ec4aed8cf9314b04e0c8d58f8b02.js": "/react-questify/precache-manifest.8269ec4aed8cf9314b04e0c8d58f8b02.js",
     "service-worker.js": "/react-questify/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/react-questify/static/css/main.d498bfb3.chunk.css.map"
   }
