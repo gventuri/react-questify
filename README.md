@@ -133,7 +133,7 @@ It will show the question provided in the `answers.default.goTo` attribute.
     text: "Please, enter your name",
     suggestion: 'Goose',
     type: 'text',
-    skippable: true
+    skippable: true, //default: false
     answers: {
         default: {
             goTo: 5
